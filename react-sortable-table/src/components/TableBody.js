@@ -13,12 +13,7 @@ const TableBody = ({ tableData, columns }) => {
       {tableData.map((data) => {
         return (
           <tr key={data.id}
-            // style={
-            //   rowClicked.includes(data.id)
-            //     ? { background: 'green' }
-            //     : { background: '' }
-            // }
-            className={(rowClicked.includes(data.id) && "rowClick")}
+            className={(rowClicked.includes(data.id) ? "rowClick" : "")}
             onClick={() => getrowclass(data.id)}
           >
             {columns.map(({ accessor }) => {

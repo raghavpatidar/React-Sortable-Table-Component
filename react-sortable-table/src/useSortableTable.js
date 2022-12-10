@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-function getDefaultSorting(defaultTableData, columns) {
+function getDefaultSorting(defaultTableData, attribute) {
   defaultTableData.map((data) => {
     return (
       data["fullname"] = data.first_name + " " + data.last_name
     );
   })
   const sorted = [...defaultTableData].sort((a, b) => {
-    const filterColumn = columns.filter((column) => column.sortbyOrder);
+    const filterColumn = attribute.filter((column) => column.sortbyOrder);
     let { accessor = "id", sortbyOrder = "asc" } = Object.assign(
       {},
       ...filterColumn
@@ -25,8 +25,8 @@ function getDefaultSorting(defaultTableData, columns) {
   });
   return sorted;
 }
-export const useSortableTable = (data, columns) => {
-  const [tableData, setTableData] = useState(getDefaultSorting(data, columns));
+export const useSortableTable = (data, attribute) => {
+  const [tableData, setTableData] = useState(getDefaultSorting(data, attribute));
   const handleSorting = (sortField, sortOrder) => {
     if (sortField) {
       console.log(sortField, sortOrder);
