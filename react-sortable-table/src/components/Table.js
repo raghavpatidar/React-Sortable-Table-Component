@@ -4,7 +4,7 @@ import { useSortableTable } from "../useSortableTable";
 
 const Table = ({ caption, data, columns }) => {
   const [tableData, handleSorting] = useSortableTable(data, columns);
-
+  // console.log(tableData);
   return (
     <>
       <table className="table">

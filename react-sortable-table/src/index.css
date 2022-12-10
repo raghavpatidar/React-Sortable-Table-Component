@@ -10,15 +10,11 @@ body {
     sans-serif;
 }
 
-/* 
-=================
-Table
-=====================
-*/
+
 
 .table_container {
-  max-width: 750px;
-  /* max-height: 500px; */
+  max-width: 1400px;
+  border-style: solid;
   margin: 0 auto;
   overflow: auto;
 }
@@ -41,7 +37,9 @@ caption {
   font-weight: bold;
   text-align: left;
 }
-
+tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
 .table th.up {
   background-image: url("./images/up_arrow.png");
 }
@@ -61,17 +59,85 @@ th.down {
 
 .table td {
   border-top: 1px solid #ddd;
-  padding: 8px 20px;
+  padding: 8px 15px ;
 }
 
 .table tbody tr:first-child td {
   border-top: none;
+  /* background: #1a1a1a; */
 }
 
-.table tbody tr:nth-child(n) td {
-  background: #eff0f0;
+.rowClick{
+ 
+  background: rgba(0, 0, 0 , 0.7);
+  color: #fff;
 }
 
-.table tbody tr:nth-child(2n) td {
-  background: #fff;
+.false{
+  color: rgba(255, 0, 0, 0.6);
+  font-weight: bolder;
+}
+
+.true{
+  color: rgba(139, 255, 89, 0.6);
+  font-weight: bolder;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  font-weight: bold;
+}
+
+.nodropdown{
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar p:hover,
+.dropdown:hover .dropbtn {
+  background: rgba(56, 67, 51, 0.6);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content p {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content p:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
